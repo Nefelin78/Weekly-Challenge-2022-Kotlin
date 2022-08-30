@@ -1,0 +1,28 @@
+package com.company;
+
+public class RetoSem3 {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 100; i++) {
+            int[] NumPrimo = new int[101];  // definicion de un arreglo para guardar la cantidad de  casos en que "i" es divisible por "j";
+
+            for (int j = 1; j <= i; j++) {
+                double isDivisible = i % j;
+                if (isDivisible == 0) {     // comprueba dibisivilidad de "i" con "j";
+                    NumPrimo[j] = j;        // el arreglo guarda los casos en que  "i" es divisible por "j";
+                }
+            }
+            int x = 0;                      // bloque de codigo para contar cuantos elementos distintos de cero contiene el arreglo;
+            for (int element : NumPrimo
+            ) {
+                if (element != 0) {
+                    x++;
+                }
+
+
+            }
+            if (x <= 2) {          // si x es igual a 2 (o menor) significa que "i" unicamente es divisible por la unidad y  por si mismo;
+                System.out.println("numero primo menor a 100 :" + i);
+            }
+        }
+    }
+}
